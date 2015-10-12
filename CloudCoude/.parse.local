@@ -1,0 +1,10 @@
+{
+  "applications": {
+    "Bug Tracker": {
+      "applicationId": "FSmlkIcmy2u0COpbVyCGX5QXSbRR9FCDGJPIO4Hh"
+    },
+    "_default": {
+      "link": "Bug Tracker"
+    }
+  }
+}

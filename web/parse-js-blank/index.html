@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <div id="main">
+    <h1>Login</h1>
+
+    
+
+  <script type="text/javascript">
+    Parse.initialize("FSmlkIcmy2u0COpbVyCGX5QXSbRR9FCDGJPIO4Hh", "1KMgkhKqacLfgUFEV01CeCplcPuOZRQDzTyXgPLR");
+
+
+	Parse.User.logIn("Charlot", "123456", {
+	  success: function(user) {
+	    document.location.href = "issueTracker.html";
+	  },
+	  error: function(user, error) {
+	  	alert('Problème lors de la connexion')
+	  }
+	});
+
+
+	var text = document.getElementById('usernameTextField');
+
+  </script>
+</body>
+
+</html>

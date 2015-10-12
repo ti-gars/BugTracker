@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>My Parse App</title>
+  <meta name="description" content="My Parse App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="http://www.parsecdn.com/js/parse-latest.js"></script>
+</head>
+
+<body>
+  
+  <h1>Add Issue</h1>
+
+  Issue Title
+  <input type="text" id="issueTitle"> </br>
+
+  Issue Description
+  <input type="text" id="issueDescription"> </br>
+
+  Issue Type
+  <input type="text" id="issueType"> </br>
+
+  Assigned To
+  <input type="text" id="assignedTo"> </br>
+
+  <button type="button" onClick ="addIssue()" >Add Issue</button>
+
+  <script type="text/javascript">
+    var addIssueButton = document.getElementById('addIssueButton');
+    var issueTitle = document.getElementById('issueTitle').value;
+    var issueDescription = document.getElementById('issueDescription').value;
+    var issueType = document.getElementById('issueType').value;
+    var assignedTo = document.getElementById('assignedTo').value;
+
+
+    function addIssue() {
+      Parse.initialize("FSmlkIcmy2u0COpbVyCGX5QXSbRR9FCDGJPIO4Hh", "1KMgkhKqacLfgUFEV01CeCplcPuOZRQDzTyXgPLR");
+
+     Parse.Cloud.run('createIssue', { title: issueTitle, description: issueDescription, type: parseInt(issueType), assignedTo: "LsN5yvzlmM" }, {
+     success: function(ratings) {
+      // ratings should be 4.5
+      alert('Reussi');
+     },
+     error: function(error) {
+      alert('Rate');
+    }
+});
+
+    }
+  </script>
+
+</body>
+
+</html>
